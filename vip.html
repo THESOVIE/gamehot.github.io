@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acceso VIP - Games Hot</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .vip-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .vip-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff3366;
+    }
+    .vip-container p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .benefits {
+      background: #252525;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .benefits ul {
+      padding-left: 20px;
+    }
+    .benefits li {
+      margin: 8px 0;
+    }
+    .paypal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .paypal-form input {
+      padding: 12px;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+    }
+    .paypal-form input:focus {
+      outline: none;
+      border-color: #ff3366;
+    }
+    .paypal-button {
+      background: #ffc439;
+      color: #000;
+      padding: 14px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .paypal-button:hover {
+      opacity: 0.9;
+    }
+    .note {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo"><h2>?? Games Hot</h2></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="btn"><i class="fas fa-home"></i> INICIO</a></li>
+        <li class="section-title">REDES</li>
+        <li><a href="https://t.me/+oKZkJEE6EhYzZGMx" target="_blank" class="btn social"><i class="fab fa-telegram"></i> Telegram</a></li>
+        <li><a href="https://discord.gg/pzjjTbkc" target="_blank" class="btn social"><i class="fab fa-discord"></i> Discord</a></li>
+        <li class="section-title">OTROS</li>
+        <li><a href="tutoriales.html" class="btn"><i class="fas fa-book"></i> TUTORIALES</a></li>
+        <li><a href="contacto.html" class="btn"><i class="fas fa-envelope"></i> CONTACTO</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="vip-container">
+      <h1><i class="fas fa-crown"></i> Acceso VIP</h1>
+      
+      <p>
+        Al donar, obtienes acceso inmediato a <strong>descargas directas sin acortadores</strong> en todos los juegos.
+        Tu apoyo nos permite mantener la web activa y subir más contenido.
+      </p>
+
+      <div class="benefits">
+        <strong>? Beneficios VIP:</strong>
+        <ul>
+          <li>Enlaces de descarga directos (sin publicidad ni esperas)</li>
+          <li>Acceso de por vida con un solo pago</li>
+          <li>Soporte prioritario vía Discord</li>
+        </ul>
+      </div>
+
+      <form class="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="business" value="yordanmortiz@yahoo.com">
+        <input type="hidden" name="cmd" value="_donations">
+        <input type="hidden" name="item_name" value="Acceso VIP - Games Hot">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="return" value="https://tudominio.com/gracias.html">
+
+        <label for="email">Tu correo electrónico (para enviarte tu acceso):</label>
+        <input type="email" id="email" name="email" required placeholder="ejemplo@gmail.com">
+
+        <label for="amount">Monto de la donación (USD):</label>
+        <input type="number" id="amount" name="amount" min="3" step="0.5" value="5" required>
+
+        <button type="submit" class="paypal-button">
+          <i class="fab fa-paypal"></i> Donar con PayPal
+        </button>
+
+        <p class="note">
+          <i class="fas fa-lock"></i> El pago se procesa 100% en PayPal. No almacenamos tus datos financieros.
+        </p>
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="gameTitle">Juego - Games Hot</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .game-detail {
+      max-width: 800px;
+      margin: 30px auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    .game-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .categories {
+      margin: 15px 0;
+    }
+    .category-tag {
+      display: inline-block;
+      background: #333;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.85em;
+      margin: 0 5px 5px 0;
+    }
+    .download-buttons {
+      margin-top: 25px;
+    }
+    .btn-download {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+    }
+    .btn-pc { background: #4d79ff; color: white; }
+    .btn-android { background: #4caf50; color: white; }
+    .btn-acortador { background: #ff9800; color: white; }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo"><h2>?? Games Hot</h2></div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="btn"><i class="fas fa-home"></i> INICIO</a></li>
+        <li class="section-title">REDES</li>
+        <li><a href="https://t.me/+oKZkJEE6EhYzZGMx" target="_blank" class="btn social"><i class="fab fa-telegram"></i> Telegram</a></li>
+        <li><a href="https://discord.gg/pzjjTbkc" target="_blank" class="btn social"><i class="fab fa-discord"></i> Discord</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="game-detail" id="gameDetail">
+      <h1 id="gameName">Cargando...</h1>
+      <img id="gameImage" class="game-img" src="" alt="Portada del juego" />
+      <p id="gameSummary">Resumen del juego...</p>
+      
+      <div class="categories">
+        <strong>Categorías:</strong>
+        <div id="gameCategories"></div>
+      </div>
+
+      <div class="download-buttons" id="downloadButtons">
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const juegosDB = {
+      "1": {
+        nombre: "Fantasy Realm",
+        imagen: "https://via.placeholder.com/800x400/333/fff?text=Fantasy+Realm",
+        resumen: "Un RPG épico en un mundo de fantasía donde debes salvar el reino de las sombras.",
+        categorias: ["Fantasía", "RPGM", "Protagonista masculino"],
+        links: {
+          pc: "https://drive.google.com/file/d/12345/view?usp=sharing",
+          android: "https://mega.nz/file/abc123"
+        }
+      },
+      "2": {
+        nombre: "Dark School",
+        imagen: "https://via.placeholder.com/800x400/444/fff?text=Dark+School",
+        resumen: "Una historia oscura en una escuela llena de secretos y deseos prohibidos.",
+        categorias: ["Escolar", "Corrupción", "2D"],
+        links: {
+          pc: "https://drive.google.com/file/d/67890/view",
+          android: "https://mega.nz/file/def456"
+        }
+      },
+      "3": {
+        nombre: "Alien Desire",
+        imagen: "https://via.placeholder.com/800x400/222/ff66aa?text=Alien+Desire",
+        resumen: "Explora planetas exóticos y relaciones intergalácticas.",
+        categorias: ["Ciencia ficción", "Interracial", "Furry"],
+        links: {
+          pc: "https://drive.google.com/file/d/112233/view",
+          android: "https://mega.nz/file/ghi789"
+        }
+      },
+      "4": {
+        nombre: "Queen's Slave",
+        imagen: "https://via.placeholder.com/800x400/111/ffcc00?text=Queen%27s+Slave",
+        resumen: "Sirve a tu reina en un reino de placer y poder.",
+        categorias: ["Dominación femenina", "Esclavo", "Bdsm"],
+        links: {
+          pc: "https://drive.google.com/file/d/445566/view",
+          android: "https://mega.nz/file/jkl012"
+        }
+      }
+    };
+
+    function isVIP() {
+      return localStorage.getItem('gameshot_vip_activated') === 'true';
+    }
+
+    function acortarLink(url) {
+      return "https://ejemplo-acortador.com/ir?url=" + encodeURIComponent(url);
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameId = urlParams.get('id');
+    const game = juegosDB[gameId];
+
+    if (game) {
+      document.getElementById('gameName').textContent = game.nombre;
+      document.getElementById('gameTitle').textContent = game.nombre + " - Games Hot";
+      document.getElementById('gameImage').src = game.imagen;
+      document.getElementById('gameSummary').textContent = game.resumen;
+
+      const catsEl = document.getElementById('gameCategories');
+      game.categorias.forEach(cat => {
+        const tag = document.createElement('span');
+        tag.className = 'category-tag';
+        tag.textContent = cat;
+        catsEl.appendChild(tag);
+      });
+
+      const btnsEl = document.getElementById('downloadButtons');
+      let pcLink = game.links.pc;
+      let androidLink = game.links.android;
+
+      if (!isVIP()) {
+        pcLink = acortarLink(pcLink);
+        androidLink = acortarLink(androidLink);
+      }
+
+      btnsEl.innerHTML = `
+        <a href="${{pcLink}}" target="_blank" class="btn-download btn-pc">
+          ??? Descargar para PC ${{isVIP() ? '' : '(con acortador)'}}
+        </a>
+        <a href="${{androidLink}}" target="_blank" class="btn-download btn-android">
+          ?? Descargar para Android ${{isVIP() ? '' : '(con acortador)'}}
+        </a>
+        ${{!isVIP() ? `<p style="margin-top:15px; color:#ff9800;">
+          ¿Quieres enlaces directos? <a href="vip.html" style="color:#ff3366;">Hazte VIP</a>
+        </p>` : ''}}
+      `;
+    } else {{
+      document.getElementById('gameDetail').innerHTML = '<h2>Juego no encontrado</h2>';
+    }}
+  </script>
+</body>
+</html>
