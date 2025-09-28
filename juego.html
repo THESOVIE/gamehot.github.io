@@ -4,58 +4,192 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title id="gameTitle">Juego - Games Hot</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://i.ibb.co/S4L9STLS/may-bnner.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .game-detail {
-      max-width: 800px;
-      margin: 30px auto;
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .game-img {
-      width: 100%;
-      border-radius: 10px;
+
+    :root {
+      --bg-dark: #0d0d0d;
+      --bg-card: #161616;
+      --text-light: #f0f0f0;
+      --accent: #ff3366;
+      --sidebar-width: 250px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      display: flex;
+    }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background: #0a0a0a;
+      height: 100vh;
+      padding: 20px 0;
+      position: fixed;
+      left: 0;
+      top: 0;
+      border-right: 1px solid #222;
+    }
+
+    .logo {
+      text-align: center;
+      padding: 0 15px 20px;
+      border-bottom: 1px solid #222;
       margin-bottom: 20px;
     }
-    .categories {
-      margin: 15px 0;
+
+    .logo img {
+      height: 50px;
+      filter: drop-shadow(0 0 6px rgba(255, 51, 102, 0.3));
     }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      color: var(--text-light);
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .btn:hover {
+      background: #1f1f1f;
+    }
+
+    .social i {
+      color: var(--accent);
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 30px;
+    }
+
+    .game-detail {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .game-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .game-detail h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .game-detail p {
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: #ddd;
+    }
+
+    .categories {
+      margin: 20px 0;
+    }
+
+    .categories strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #aaa;
+    }
+
     .category-tag {
       display: inline-block;
-      background: #333;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-size: 0.85em;
-      margin: 0 5px 5px 0;
+      background: #2a2a2a;
+      color: #ccc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      margin: 0 8px 8px 0;
+      border: 1px solid #3a3a3a;
     }
+
     .download-buttons {
-      margin-top: 25px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
+
     .btn-download {
-      display: inline-block;
-      padding: 12px 25px;
-      margin: 10px;
-      border-radius: 8px;
+      flex: 1;
+      min-width: 200px;
+      padding: 14px;
+      text-align: center;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
-      text-align: center;
+      transition: opacity 0.2s;
     }
-    .btn-pc { background: #4d79ff; color: white; }
-    .btn-android { background: #4caf50; color: white; }
-    .btn-acortador { background: #ff9800; color: white; }
+
+    .btn-pc {
+      background: linear-gradient(135deg, #4d79ff, #3a68e0);
+      color: white;
+    }
+
+    .btn-android {
+      background: linear-gradient(135deg, #4caf50, #3d8b40);
+      color: white;
+    }
+
+    .btn-acortador {
+      background: linear-gradient(135deg, #ff9800, #e67e00);
+      color: white;
+    }
+
+    .btn-download:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 70px;
+      }
+      .logo img {
+        height: 40px;
+      }
+      .sidebar .btn span:not(.fas):not(.fab) {
+        display: none;
+      }
+      .main-content {
+        margin-left: 70px;
+        padding: 15px;
+      }
+      .download-buttons {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
   <aside class="sidebar">
-    <div class="logo"><h2>?? Games Hot</h2></div>
+    <div class="logo">
+      <img src="https://i.ibb.co/S4L9STLS/may-bnner.png" alt="Games Hot">
+    </div>
     <nav>
-      <ul>
-        <li><a href="index.html" class="btn"><i class="fas fa-home"></i> INICIO</a></li>
-        <li class="section-title">REDES</li>
-        <li><a href="https://t.me/+oKZkJEE6EhYzZGMx" target="_blank" class="btn social"><i class="fab fa-telegram"></i> Telegram</a></li>
-        <li><a href="https://discord.gg/pzjjTbkc" target="_blank" class="btn social"><i class="fab fa-discord"></i> Discord</a></li>
-      </ul>
+      <a href="index.html" class="btn"><i class="fas fa-home"></i> <span>INICIO</span></a>
+      <a href="https://t.me/tu_canal" target="_blank" class="btn social"><i class="fab fa-telegram"></i> <span>Telegram</span></a>
+      <a href="https://discord.gg/tu-invite" target="_blank" class="btn social"><i class="fab fa-discord"></i> <span>Discord</span></a>
     </nav>
   </aside>
 
@@ -71,6 +205,7 @@
       </div>
 
       <div class="download-buttons" id="downloadButtons">
+        <!-- Se llenará con JS -->
       </div>
     </div>
   </main>
@@ -79,8 +214,8 @@
     const juegosDB = {
       "1": {
         nombre: "Fantasy Realm",
-        imagen: "https://via.placeholder.com/800x400/333/fff?text=Fantasy+Realm",
-        resumen: "Un RPG épico en un mundo de fantasía donde debes salvar el reino de las sombras.",
+        imagen: "https://via.placeholder.com/800x400/222/fff?text=Fantasy+Realm",
+        resumen: "Un RPG épico en un mundo de fantasía donde debes salvar el reino de las sombras. Explora mazmorras, derrota dragones y descubre secretos ancestrales.",
         categorias: ["Fantasía", "RPGM", "Protagonista masculino"],
         links: {
           pc: "https://drive.google.com/file/d/12345/view?usp=sharing",
@@ -89,8 +224,8 @@
       },
       "2": {
         nombre: "Dark School",
-        imagen: "https://via.placeholder.com/800x400/444/fff?text=Dark+School",
-        resumen: "Una historia oscura en una escuela llena de secretos y deseos prohibidos.",
+        imagen: "https://via.placeholder.com/800x400/333/fff?text=Dark+School",
+        resumen: "Una historia oscura en una escuela llena de secretos y deseos prohibidos. Tus decisiones determinarán tu destino.",
         categorias: ["Escolar", "Corrupción", "2D"],
         links: {
           pc: "https://drive.google.com/file/d/67890/view",
@@ -99,22 +234,12 @@
       },
       "3": {
         nombre: "Alien Desire",
-        imagen: "https://via.placeholder.com/800x400/222/ff66aa?text=Alien+Desire",
-        resumen: "Explora planetas exóticos y relaciones intergalácticas.",
+        imagen: "https://via.placeholder.com/800x400/444/ff66aa?text=Alien+Desire",
+        resumen: "Explora planetas exóticos y relaciones intergalácticas en esta aventura de ciencia ficción.",
         categorias: ["Ciencia ficción", "Interracial", "Furry"],
         links: {
           pc: "https://drive.google.com/file/d/112233/view",
           android: "https://mega.nz/file/ghi789"
-        }
-      },
-      "4": {
-        nombre: "Queen's Slave",
-        imagen: "https://via.placeholder.com/800x400/111/ffcc00?text=Queen%27s+Slave",
-        resumen: "Sirve a tu reina en un reino de placer y poder.",
-        categorias: ["Dominación femenina", "Esclavo", "Bdsm"],
-        links: {
-          pc: "https://drive.google.com/file/d/445566/view",
-          android: "https://mega.nz/file/jkl012"
         }
       }
     };
@@ -155,19 +280,19 @@
       }
 
       btnsEl.innerHTML = `
-        <a href="${{pcLink}}" target="_blank" class="btn-download btn-pc">
-          ??? Descargar para PC ${{isVIP() ? '' : '(con acortador)'}}
+        <a href="${pcLink}" target="_blank" class="btn-download btn-pc">
+          🖥️ Descargar para PC ${isVIP() ? '' : '(con acortador)'}
         </a>
-        <a href="${{androidLink}}" target="_blank" class="btn-download btn-android">
-          ?? Descargar para Android ${{isVIP() ? '' : '(con acortador)'}}
+        <a href="${androidLink}" target="_blank" class="btn-download btn-android">
+          📱 Descargar para Android ${isVIP() ? '' : '(con acortador)'}
         </a>
-        ${{!isVIP() ? `<p style="margin-top:15px; color:#ff9800;">
-          ¿Quieres enlaces directos? <a href="vip.html" style="color:#ff3366;">Hazte VIP</a>
-        </p>` : ''}}
+        ${!isVIP() ? `<p style="margin-top:15px; color:#ffcc00; text-align:center; width:100%;">
+          ¿Quieres enlaces directos? <a href="vip.html" style="color:#ff3366; text-decoration:underline;">Hazte VIP</a>
+        </p>` : ''}
       `;
-    } else {{
-      document.getElementById('gameDetail').innerHTML = '<h2>Juego no encontrado</h2>';
-    }}
+    } else {
+      document.getElementById('gameDetail').innerHTML = '<h2 style="text-align:center; color:#ff3366;">Juego no encontrado</h2>';
+    }
   </script>
 </body>
 </html>

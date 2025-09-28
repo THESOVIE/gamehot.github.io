@@ -89,10 +89,12 @@ body {
   padding: 30px;
 }
 
+./* Barra de búsqueda */
 .search-bar {
   position: relative;
   max-width: 600px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
+  width: 100%;
 }
 
 .search-bar input {
@@ -103,6 +105,7 @@ body {
   border-radius: 8px;
   color: white;
   font-size: 16px;
+  outline: none;
 }
 
 .search-bar i {
@@ -111,6 +114,8 @@ body {
   top: 50%;
   transform: translateY(-50%);
   color: #777;
+  pointer-events: none;
+  font-size: 16px;
 }
 
 .games-grid {
@@ -167,4 +172,33 @@ body {
   .games-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
+}/* Filtros por categoría */
+.categories-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 30px;
+  padding: 0 10px;
+}
+
+.cat-btn {
+  background: #252525;
+  color: #ccc;
+  border: 1px solid #444;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cat-btn:hover {
+  background: #333;
+  color: white;
+}
+
+.cat-btn.active {
+  background: #ff3366;
+  color: white;
+  border-color: #ff3366;
 }

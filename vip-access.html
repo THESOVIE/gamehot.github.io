@@ -4,22 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Activando VIP - Games Hot</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://i.ibb.co/S4L9STLS/may-bnner.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-dark: #0d0d0d;
+      --bg-card: #161616;
+      --text-light: #f0f0f0;
+      --accent: #ff3366;
+      --sidebar-width: 250px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      display: flex;
+    }
+
+    .sidebar {
+      width: var(--sidebar-width);
+      background: #0a0a0a;
+      height: 100vh;
+      padding: 20px 0;
+      position: fixed;
+      left: 0;
+      top: 0;
+      border-right: 1px solid #222;
+    }
+
+    .logo {
+      text-align: center;
+      padding: 0 15px 20px;
+      border-bottom: 1px solid #222;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      height: 50px;
+      filter: drop-shadow(0 0 6px rgba(255, 51, 102, 0.3));
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 30px;
+    }
+
     .activate {
-      max-width: 500px;
+      max-width: 550px;
       margin: 100px auto;
       text-align: center;
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .activate h2 {
+      margin-bottom: 20px;
+    }
+
+    .success {
+      color: #4caf50;
+    }
+
+    .error {
+      color: #f44336;
+    }
+
+    .btn-home {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 70px;
+      }
+      .logo img {
+        height: 40px;
+      }
+      .main-content {
+        margin-left: 70px;
+        padding: 15px;
+      }
+      .activate {
+        padding: 25px;
+      }
     }
   </style>
 </head>
 <body>
   <aside class="sidebar">
-    <div class="logo"><h2>?? Games Hot</h2></div>
+    <div class="logo">
+      <img src="https://i.ibb.co/S4L9STLS/may-bnner.png" alt="Games Hot">
+    </div>
   </aside>
+
   <main class="main-content">
     <div class="activate" id="status">
       <h2>Activando acceso VIP...</h2>
@@ -37,15 +131,15 @@
       localStorage.setItem('gameshot_vip_activated', 'true');
 
       document.getElementById('status').innerHTML = `
-        <h2 style="color:#4caf50;">? ¡Acceso VIP activado!</h2>
-        <p>Ahora puedes descargar juegos sin acortadores.</p>
-        <p><a href="index.html" class="btn" style="display:inline-block; margin-top:15px; padding:10px 20px; background:#ff3366; color:white; text-decoration:none; border-radius:6px;">
-          Ir a la página principal
-        </a></p>
+        <h2 class="success">✅ ¡Acceso VIP activado!</h2>
+        <p>Ahora puedes descargar todos los juegos sin acortadores.</p>
+        <a href="index.html" class="btn-home">
+          <i class="fas fa-home"></i> Ir al inicio
+        </a>
       `;
     } else {
       document.getElementById('status').innerHTML = `
-        <h2 style="color:#f44336;">? Enlace inválido</h2>
+        <h2 class="error">❌ Enlace inválido</h2>
         <p>El enlace de acceso no es válido o ha expirado.</p>
         <p>Contacta a soporte si crees que es un error.</p>
       `;
