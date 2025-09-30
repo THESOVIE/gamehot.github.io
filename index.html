@@ -7,30 +7,20 @@
   <link rel="icon" href="https://i.ibb.co/S4L9STLS/may-bnner.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* === ESTILOS MODERNOS Y PROFESIONALES === */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --bg-dark: #0d0d0d;
       --bg-card: #161616;
       --text-light: #f0f0f0;
       --accent: #ff3366;
       --sidebar-width: 250px;
-      --filter-categories: "Furry,Futa/Trans,Gay,Ntr,Protagonista femenino";
     }
-
     body {
       background-color: var(--bg-dark);
       color: var(--text-light);
       font-family: 'Segoe UI', system-ui, sans-serif;
       display: flex;
     }
-
-    /* Sidebar */
     .sidebar {
       width: var(--sidebar-width);
       background: #0a0a0a;
@@ -40,232 +30,43 @@
       left: 0;
       top: 0;
       border-right: 1px solid #222;
-      overflow-y: auto;
     }
-
-    .sidebar .logo {
-      text-align: center;
-      padding: 0 15px 20px;
-      border-bottom: 1px solid #222;
-      margin-bottom: 20px;
-    }
-
-    .logo img {
-      height: 60px;
-      filter: drop-shadow(0 0 6px rgba(255, 51, 102, 0.3));
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0 10px;
-    }
-
-    .sidebar li {
-      margin: 10px 0;
-    }
-
-    .section-title {
-      padding: 10px 10px 5px;
-      font-size: 0.8em;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 15px;
-      color: var(--text-light);
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.2s;
-    }
-
-    .btn:hover {
-      background: #1f1f1f;
-    }
-
-    .btn.vip-btn {
-      background: linear-gradient(90deg, #ff6b35, var(--accent));
-      color: white;
-      margin: 15px 15px 25px;
-      font-weight: bold;
-    }
-
-    .btn.vip-btn:hover {
-      opacity: 0.92;
-    }
-
-    .social i {
-      color: var(--accent);
-    }
-
-    /* Contenido principal */
-    .main-content {
-      flex: 1;
-      margin-left: var(--sidebar-width);
-      padding: 30px;
-    }
-
-    /* Barra de búsqueda */
-    .search-bar {
-      position: relative;
-      max-width: 650px;
-      margin: 0 auto 25px;
-    }
-
-    .search-bar input {
-      width: 100%;
-      padding: 14px 20px 14px 48px;
-      background: var(--bg-card);
-      border: 1px solid #333;
-      border-radius: 10px;
-      color: white;
-      font-size: 16px;
-      outline: none;
-      transition: border 0.3s;
-    }
-
-    .search-bar input:focus {
-      border-color: var(--accent);
-    }
-
-    .search-bar i {
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #777;
-      font-size: 18px;
-    }
-
-    /* Modo Filtro */
-    .filter-mode {
-      text-align: center;
-      margin: 0 auto 25px;
-      max-width: 650px;
-    }
-
-    .filter-toggle {
-      background: #2a2a2a;
-      color: #ffcc00;
-      border: 1px solid #444;
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.9em;
-      transition: all 0.2s;
-    }
-
-    .filter-toggle.active {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    /* Categorías */
-    .categories-filter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 30px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cat-btn {
-      background: #222;
-      color: #ccc;
-      border: 1px solid #3a3a3a;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85em;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .cat-btn:hover {
-      background: #333;
-      color: white;
-    }
-
-    .cat-btn.active {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    /* Grid de juegos */
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 28px;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .game-card {
-      background: var(--bg-card);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-
-    .game-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(255,51,102,0.25);
-    }
-
-    .game-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-    }
-
-    .game-card .title {
-      padding: 14px;
-      text-align: center;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 1.3;
-    }
-
-    /* Responsive */
+    .logo { text-align: center; padding: 0 15px 20px; border-bottom: 1px solid #222; margin-bottom: 20px; }
+    .logo img { height: 60px; filter: drop-shadow(0 0 6px rgba(255, 51, 102, 0.3)); }
+    .sidebar ul { list-style: none; padding: 0 10px; }
+    .sidebar li { margin: 10px 0; }
+    .section-title { padding: 10px 10px 5px; font-size: 0.8em; color: #888; text-transform: uppercase; }
+    .btn { display: flex; align-items: center; gap: 12px; padding: 12px 15px; color: var(--text-light); text-decoration: none; border-radius: 8px; }
+    .btn:hover { background: #1f1f1f; }
+    .btn.vip-btn { background: linear-gradient(90deg, #ff6b35, var(--accent)); color: white; margin: 15px 15px 25px; font-weight: bold; }
+    .social i { color: var(--accent); }
+    .main-content { flex: 1; margin-left: var(--sidebar-width); padding: 30px; }
+    .search-bar { position: relative; max-width: 650px; margin: 0 auto 25px; }
+    .search-bar input { width: 100%; padding: 14px 20px 14px 48px; background: var(--bg-card); border: 1px solid #333; border-radius: 10px; color: white; font-size: 16px; outline: none; }
+    .search-bar i { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #777; font-size: 18px; }
+    .filter-mode { text-align: center; margin: 0 auto 25px; max-width: 650px; }
+    .filter-toggle { background: #2a2a2a; color: #ffcc00; border: 1px solid #444; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 0.9em; }
+    .filter-toggle.active { background: var(--accent); color: white; border-color: var(--accent); }
+    .categories-filter { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .cat-btn { background: #222; color: #ccc; border: 1px solid #3a3a3a; padding: 6px 14px; border-radius: 20px; font-size: 0.85em; cursor: pointer; }
+    .cat-btn:hover { background: #333; color: white; }
+    .cat-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+    .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 28px; max-width: 1300px; margin: 0 auto; }
+    .game-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; transition: transform 0.25s; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
+    .game-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(255,51,102,0.25); }
+    .game-card img { width: 100%; height: 190px; object-fit: cover; }
+    .game-card .title { padding: 14px; text-align: center; font-weight: 600; font-size: 14px; }
     @media (max-width: 768px) {
-      .sidebar {
-        width: 70px;
-      }
-      .sidebar .logo img {
-        height: 45px;
-      }
-      .sidebar .section-title,
-      .sidebar span:not(.fas):not(.fab) {
-        display: none;
-      }
-      .sidebar .btn {
-        justify-content: center;
-        padding: 16px 0;
-      }
-      .main-content {
-        margin-left: 70px;
-        padding: 15px;
-      }
-      .games-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 20px;
-      }
+      .sidebar { width: 70px; }
+      .sidebar .logo img { height: 45px; }
+      .sidebar .section-title, .sidebar span:not(.fas):not(.fab) { display: none; }
+      .sidebar .btn { justify-content: center; padding: 16px 0; }
+      .main-content { margin-left: 70px; padding: 15px; }
+      .games-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Sidebar -->
   <aside class="sidebar">
     <div class="logo">
       <img src="https://i.ibb.co/S4L9STLS/may-bnner.png" alt="Games Hot">
@@ -274,8 +75,8 @@
       <ul>
         <li><a href="index.html" class="btn"><i class="fas fa-home"></i> INICIO</a></li>
         <li class="section-title">REDES</li>
-        <li><a href="https://t.me/+rrlCyGExPJo3MzEx" target="_blank" class="btn social"><i class="fab fa-telegram"></i> Telegram</a></li>
-        <li><a href="https://discord.gg/pzjjTbkc" target="_blank" class="btn social"><i class="fab fa-discord"></i> Discord</a></li>
+        <li><a href="https://t.me/tu_canal" target="_blank" class="btn social"><i class="fab fa-telegram"></i> Telegram</a></li>
+        <li><a href="https://discord.gg/tu-invite" target="_blank" class="btn social"><i class="fab fa-discord"></i> Discord</a></li>
         <li class="section-title">OTROS</li>
         <li><a href="tutoriales.html" class="btn"><i class="fas fa-book"></i> TUTORIALES</a></li>
         <li><a href="contacto.html" class="btn"><i class="fas fa-envelope"></i> CONTACTO</a></li>
@@ -284,196 +85,135 @@
     </nav>
   </aside>
 
-  <!-- Contenido principal -->
   <main class="main-content">
-    <!-- Barra de búsqueda -->
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Buscar juego por nombre o categoría..." />
+      <input type="text" id="searchInput" placeholder="Buscar juego..." />
       <i class="fas fa-search"></i>
     </div>
 
-    <!-- Modo Filtro -->
     <div class="filter-mode">
       <button id="filterToggle" class="filter-toggle active">
         <i class="fas fa-eye-slash"></i> Modo Filtro ACTIVADO
       </button>
     </div>
 
-    <!-- Filtros por categoría -->
     <div class="categories-filter" id="categoriesFilter">
-      <button class="cat-btn active" data-category="todas">Todas</button>
-      <button class="cat-btn" data-category="2D">2D</button>
-      <button class="cat-btn" data-category="Anal">Anal</button>
-      <button class="cat-btn" data-category="Bdsm">Bdsm</button>
-      <button class="cat-btn" data-category="Ciencia ficción">Ciencia ficción</button>
-      <button class="cat-btn" data-category="Control mental">Control mental</button>
-      <button class="cat-btn" data-category="Corrupción">Corrupción</button>
-      <button class="cat-btn" data-category="Dominación femenina">Dominación femenina</button>
-      <button class="cat-btn" data-category="Dominación masculina">Dominación masculina</button>
-      <button class="cat-btn" data-category="Embarazo">Embarazo</button>
-      <button class="cat-btn" data-category="Esclavo">Esclavo</button>
-      <button class="cat-btn" data-category="Escolar">Escolar</button>
-      <button class="cat-btn" data-category="Exclusivo">Exclusivo</button>
-      <button class="cat-btn" data-category="Fantasía">Fantasía</button>
-      <button class="cat-btn" data-category="Finalizado">Finalizado</button>
-      <button class="cat-btn" data-category="Furry">Furry</button>
-      <button class="cat-btn" data-category="Futa/Trans">Futa/Trans</button>
-      <button class="cat-btn" data-category="Gay">Gay</button>
-      <button class="cat-btn" data-category="Harem">Harem</button>
-      <button class="cat-btn" data-category="Humor">Humor</button>
-      <button class="cat-btn" data-category="Incesto">Incesto</button>
-      <button class="cat-btn" data-category="Interracial">Interracial</button>
-      <button class="cat-btn" data-category="Lesbianas">Lesbianas</button>
-      <button class="cat-btn" data-category="Lol1">Lol1</button>
-      <button class="cat-btn" data-category="Milf">Milf</button>
-      <button class="cat-btn" data-category="Monstruo">Monstruo</button>
-      <button class="cat-btn" data-category="Ntr">Ntr</button>
-      <button class="cat-btn" data-category="Parodia">Parodia</button>
-      <button class="cat-btn" data-category="Protagonista femenino">Protagonista femenino</button>
-      <button class="cat-btn" data-category="Protagonista masculino">Protagonista masculino</button>
-      <button class="cat-btn" data-category="Romance">Romance</button>
-      <button class="cat-btn" data-category="RPGM">RPGM</button>
-      <button class="cat-btn" data-category="Sandbox">Sandbox</button>
-      <button class="cat-btn" data-category="Shota">Shota</button>
-      <button class="cat-btn" data-category="Superpoderes">Superpoderes</button>
-      <button class="cat-btn" data-category="Tetas grandes">Tetas grandes</button>
-      <button class="cat-btn" data-category="V1olación">V1olación</button>
-      <button class="cat-btn" data-category="Virgen">Virgen</button>
-    </div>
+  <button class="cat-btn active" data-category="todas">Todas</button>
+  <button class="cat-btn" data-category="2D">2D</button>
+  <button class="cat-btn" data-category="3dcg">3DCG</button>
+  <button class="cat-btn" data-category="ai cg">AI CG</button>
+  <button class="cat-btn" data-category="Anal">Anal</button>
+  <button class="cat-btn" data-category="Bdsm">Bdsm</button>
+  <button class="cat-btn" data-category="Ciencia ficción">Ciencia ficción</button>
+  <button class="cat-btn" data-category="Control mental">Control mental</button>
+  <button class="cat-btn" data-category="Corrupción">Corrupción</button>
+  <button class="cat-btn" data-category="Dominación femenina">Dominación femenina</button>
+  <button class="cat-btn" data-category="Dominación masculina">Dominación masculina</button>
+  <button class="cat-btn" data-category="Embarazo">Embarazo</button>
+  <button class="cat-btn" data-category="Esclavo">Esclavo</button>
+  <button class="cat-btn" data-category="Escolar">Escolar</button>
+  <button class="cat-btn" data-category="Exclusivo">Exclusivo</button>
+  <button class="cat-btn" data-category="Fantasía">Fantasía</button>
+  <button class="cat-btn" data-category="Finalizado">Finalizado</button>
+  <button class="cat-btn" data-category="Furry">Furry</button>
+  <button class="cat-btn" data-category="Futa/Trans">Futa/Trans</button>
+  <button class="cat-btn" data-category="Gay">Gay</button>
+  <button class="cat-btn" data-category="Harem">Harem</button>
+  <button class="cat-btn" data-category="Humor">Humor</button>
+  <button class="cat-btn" data-category="Incesto">Incesto</button>
+  <button class="cat-btn" data-category="Interracial">Interracial</button>
+  <button class="cat-btn" data-category="Lesbianas">Lesbianas</button>
+  <button class="cat-btn" data-category="Lol1">Lol1</button>
+  <button class="cat-btn" data-category="Milf">Milf</button>
+  <button class="cat-btn" data-category="Monstruo">Monstruo</button>
+  <button class="cat-btn" data-category="Ntr">Ntr</button>
+  <button class="cat-btn" data-category="Parodia">Parodia</button>
+  <button class="cat-btn" data-category="Protagonista femenino">Protagonista femenino</button>
+  <button class="cat-btn" data-category="Protagonista masculino">Protagonista masculino</button>
+  <button class="cat-btn" data-category="Romance">Romance</button>
+  <button class="cat-btn" data-category="RPGM">RPGM</button>
+  <button class="cat-btn" data-category="Sandbox">Sandbox</button>
+  <button class="cat-btn" data-category="Shota">Shota</button>
+  <button class="cat-btn" data-category="Superpoderes">Superpoderes</button>
+  <button class="cat-btn" data-category="Tetas grandes">Tetas grandes</button>
+  <button class="cat-btn" data-category="V1olación">V1olación</button>
+  <button class="cat-btn" data-category="Virgen">Virgen</button>
+</div>
 
-    <!-- Grid de juegos -->
     <div class="games-grid" id="gamesContainer">
-      <!-- Se llenará con JavaScript -->
+      <p style="grid-column:1/-1; text-align:center;">Cargando juegos...</p>
     </div>
   </main>
 
   <script>
-    // Categorías sensibles (para el Modo Filtro)
-    const CATEGORIAS_SENSIBLES = [
-      "Furry", "Futa/Trans", "Gay", "Ntr", "Protagonista femenino"
-    ];
-
-    // Datos de juegos (ejemplo)
-    const juegos = [
-      {
-        id: 1,
-        nombre: "Fantasy Realm",
-        imagen: "https://via.placeholder.com/210x190/222/fff?text=Fantasy+Realm",
-        categorias: ["Fantasía", "RPGM", "Protagonista masculino"]
-      },
-      {
-        id: 2,
-        nombre: "Dark School",
-        imagen: "https://via.placeholder.com/210x190/333/fff?text=Dark+School",
-        categorias: ["Escolar", "Corrupción", "2D"]
-      },
-      {
-        id: 3,
-        nombre: "Alien Desire",
-        imagen: "https://via.placeholder.com/210x190/444/ff66aa?text=Alien+Desire",
-        categorias: ["Ciencia ficción", "Interracial", "Furry"]
-      },
-      {
-        id: 4,
-        nombre: "Queen's Slave",
-        imagen: "https://via.placeholder.com/210x190/111/ffcc00?text=Queen%27s+Slave",
-        categorias: ["Dominación femenina", "Esclavo", "Bdsm"]
-      },
-      {
-        id: 5,
-        nombre: "Family Secrets",
-        imagen: "https://via.placeholder.com/210x190/555/ff9999?text=Family+Secrets",
-        categorias: ["Incesto", "Romance"]
-      },
-      {
-        id: 6,
-        nombre: "Boys Club",
-        imagen: "https://via.placeholder.com/210x190/666/99ccff?text=Boys+Club",
-        categorias: ["Gay", "Humor", "Escolar"]
-      }
-    ];
-
+    const CATEGORIAS_SENSIBLES = ["Furry", "Futa/Trans", "Gay", "Ntr", "Protagonista femenino"];
+    let juegos = [];
     let categoriaActual = 'todas';
-    let modoFiltroActivo = true; // Activado por defecto
+    let modoFiltroActivo = true;
 
-    // Verificar si un juego debe ocultarse en Modo Filtro
-    function debeOcultarse(juego) {
-      if (!modoFiltroActivo) return false;
-      return juego.categorias.some(cat => CATEGORIAS_SENSIBLES.includes(cat));
+    async function cargarJuegos() {
+      try {
+        const res = await fetch('juegos.json');
+        juegos = await res.json();
+        renderJuegos();
+      } catch (e) {
+        document.getElementById('gamesContainer').innerHTML = '<p style="grid-column:1/-1; color:#f44336;">Error al cargar los juegos.</p>';
+      }
     }
 
-    // Renderizar juegos
-    function renderJuegos() {
-      const container = document.getElementById('gamesContainer');
-      container.innerHTML = '';
+    function debeOcultarse(juego) {
+      return modoFiltroActivo && juego.categorias.some(c => CATEGORIAS_SENSIBLES.includes(c));
+    }
 
+    function renderJuegos() {
+      const cont = document.getElementById('gamesContainer');
       let filtrados = juegos;
 
-      // Aplicar filtro por categoría
       if (categoriaActual !== 'todas') {
-        filtrados = filtrados.filter(juego =>
-          juego.categorias.includes(categoriaActual)
-        );
+        filtrados = filtrados.filter(j => j.categorias.includes(categoriaActual));
       }
 
-      // Aplicar búsqueda
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      filtrados = filtrados.filter(juego =>
-        juego.nombre.toLowerCase().includes(query) ||
-        juego.categorias.some(cat => cat.toLowerCase().includes(query))
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      filtrados = filtrados.filter(j =>
+        j.nombre.toLowerCase().includes(q) ||
+        j.categorias.some(c => c.toLowerCase().includes(q))
       );
 
-      // Aplicar Modo Filtro
-      filtrados = filtrados.filter(juego => !debeOcultarse(juego));
+      filtrados = filtrados.filter(j => !debeOcultarse(j));
 
       if (filtrados.length === 0) {
-        container.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#777;">No se encontraron juegos.</p>';
+        cont.innerHTML = '<p style="grid-column:1/-1; color:#777;">No se encontraron juegos.</p>';
         return;
       }
 
-      filtrados.forEach(juego => {
-        const card = document.createElement('div');
-        card.className = 'game-card';
-        card.innerHTML = `
-          <img src="${juego.imagen}" alt="${juego.nombre}">
-          <div class="title">${juego.nombre}</div>
-        `;
-        card.addEventListener('click', () => {
-          window.location.href = `juego.html?id=${juego.id}`;
-        });
-        container.appendChild(card);
-      });
+      cont.innerHTML = filtrados.map(j => `
+        <div class="game-card" onclick="window.location='juego.html?id=${j.id}'">
+          <img src="${j.miniatura}" alt="${j.nombre}">
+          <div class="title">${j.nombre}</div>
+        </div>
+      `).join('');
     }
 
-    // Toggle Modo Filtro
-    document.getElementById('filterToggle').addEventListener('click', () => {
-      modoFiltroActivo = !modoFiltroActivo;
-      const btn = document.getElementById('filterToggle');
-      if (modoFiltroActivo) {
-        btn.classList.add('active');
-        btn.innerHTML = '<i class="fas fa-eye-slash"></i> Modo Filtro ACTIVADO';
-      } else {
-        btn.classList.remove('active');
-        btn.innerHTML = '<i class="fas fa-eye"></i> Modo Filtro DESACTIVADO';
-      }
-      renderJuegos();
-    });
-
-    // Filtros por categoría
-    document.querySelectorAll('.cat-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        categoriaActual = btn.dataset.category;
+    document.getElementById('searchInput').addEventListener('input', renderJuegos);
+    document.querySelectorAll('.cat-btn').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        categoriaActual = b.dataset.category;
         renderJuegos();
       });
     });
+    document.getElementById('filterToggle').addEventListener('click', () => {
+      modoFiltroActivo = !modoFiltroActivo;
+      const btn = document.getElementById('filterToggle');
+      btn.classList.toggle('active', modoFiltroActivo);
+      btn.innerHTML = modoFiltroActivo ?
+        '<i class="fas fa-eye-slash"></i> Modo Filtro ACTIVADO' :
+        '<i class="fas fa-eye"></i> Modo Filtro DESACTIVADO';
+      renderJuegos();
+    });
 
-    // Búsqueda en tiempo real
-    document.getElementById('searchInput').addEventListener('input', renderJuegos);
-
-    // Cargar al inicio
-    renderJuegos();
+    cargarJuegos();
   </script>
 </body>
 </html>

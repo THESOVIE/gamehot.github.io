@@ -3,16 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title id="gameTitle">Juego - Games Hot</title>
+  <title>Juego - Games Hot</title>
   <link rel="icon" href="https://i.ibb.co/S4L9STLS/may-bnner.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --bg-dark: #0d0d0d;
       --bg-card: #161616;
@@ -20,14 +15,12 @@
       --accent: #ff3366;
       --sidebar-width: 250px;
     }
-
     body {
       background-color: var(--bg-dark);
       color: var(--text-light);
       font-family: 'Segoe UI', system-ui, sans-serif;
       display: flex;
     }
-
     .sidebar {
       width: var(--sidebar-width);
       background: #0a0a0a;
@@ -38,146 +31,30 @@
       top: 0;
       border-right: 1px solid #222;
     }
-
-    .logo {
-      text-align: center;
-      padding: 0 15px 20px;
-      border-bottom: 1px solid #222;
-      margin-bottom: 20px;
-    }
-
-    .logo img {
-      height: 50px;
-      filter: drop-shadow(0 0 6px rgba(255, 51, 102, 0.3));
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 20px;
-      color: var(--text-light);
-      text-decoration: none;
-      border-radius: 8px;
-    }
-
-    .btn:hover {
-      background: #1f1f1f;
-    }
-
-    .social i {
-      color: var(--accent);
-    }
-
-    .main-content {
-      flex: 1;
-      margin-left: var(--sidebar-width);
-      padding: 30px;
-    }
-
-    .game-detail {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--bg-card);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    }
-
-    .game-img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .game-detail h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: white;
-    }
-
-    .game-detail p {
-      line-height: 1.7;
-      margin-bottom: 25px;
-      color: #ddd;
-    }
-
-    .categories {
-      margin: 20px 0;
-    }
-
-    .categories strong {
-      display: block;
-      margin-bottom: 10px;
-      color: #aaa;
-    }
-
-    .category-tag {
-      display: inline-block;
-      background: #2a2a2a;
-      color: #ccc;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.9em;
-      margin: 0 8px 8px 0;
-      border: 1px solid #3a3a3a;
-    }
-
-    .download-buttons {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .btn-download {
-      flex: 1;
-      min-width: 200px;
-      padding: 14px;
-      text-align: center;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: opacity 0.2s;
-    }
-
-    .btn-pc {
-      background: linear-gradient(135deg, #4d79ff, #3a68e0);
-      color: white;
-    }
-
-    .btn-android {
-      background: linear-gradient(135deg, #4caf50, #3d8b40);
-      color: white;
-    }
-
-    .btn-acortador {
-      background: linear-gradient(135deg, #ff9800, #e67e00);
-      color: white;
-    }
-
-    .btn-download:hover {
-      opacity: 0.9;
-    }
-
+    .logo { text-align: center; padding: 0 15px 20px; border-bottom: 1px solid #222; margin-bottom: 20px; }
+    .logo img { height: 50px; filter: drop-shadow(0 0 6px rgba(255, 51, 102, 0.3)); }
+    .btn { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: var(--text-light); text-decoration: none; border-radius: 8px; }
+    .btn:hover { background: #1f1f1f; }
+    .social i { color: var(--accent); }
+    .main-content { flex: 1; margin-left: var(--sidebar-width); padding: 30px; }
+    .game-detail { max-width: 800px; margin: 0 auto; background: var(--bg-card); padding: 30px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+    .game-img { width: 100%; border-radius: 12px; margin-bottom: 25px; }
+    .game-detail h1 { font-size: 28px; margin-bottom: 20px; }
+    .game-detail p { line-height: 1.7; margin-bottom: 25px; color: #ddd; }
+    .categories strong { display: block; margin-bottom: 10px; color: #aaa; }
+    .category-tag { display: inline-block; background: #2a2a2a; color: #ccc; padding: 6px 14px; border-radius: 20px; margin: 0 8px 8px 0; border: 1px solid #3a3a3a; }
+    .download-buttons { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 15px; }
+    .btn-download { flex: 1; min-width: 200px; padding: 14px; text-align: center; border-radius: 10px; text-decoration: none; font-weight: bold; }
+    .btn-pc { background: linear-gradient(135deg, #4d79ff, #3a68e0); color: white; }
+    .btn-android { background: linear-gradient(135deg, #4caf50, #3d8b40); color: white; }
+    .btn-acortador { background: linear-gradient(135deg, #ff9800, #e67e00); color: white; }
+    .btn-download:hover { opacity: 0.9; }
     @media (max-width: 768px) {
-      .sidebar {
-        width: 70px;
-      }
-      .logo img {
-        height: 40px;
-      }
-      .sidebar .btn span:not(.fas):not(.fab) {
-        display: none;
-      }
-      .main-content {
-        margin-left: 70px;
-        padding: 15px;
-      }
-      .download-buttons {
-        flex-direction: column;
-      }
+      .sidebar { width: 70px; }
+      .logo img { height: 40px; }
+      .sidebar .btn span:not(.fas):not(.fab) { display: none; }
+      .main-content { margin-left: 70px; padding: 15px; }
+      .download-buttons { flex-direction: column; }
     }
   </style>
 </head>
@@ -186,11 +63,9 @@
     <div class="logo">
       <img src="https://i.ibb.co/S4L9STLS/may-bnner.png" alt="Games Hot">
     </div>
-    <nav>
-      <a href="index.html" class="btn"><i class="fas fa-home"></i> <span>INICIO</span></a>
-      <a href="https://t.me/tu_canal" target="_blank" class="btn social"><i class="fab fa-telegram"></i> <span>Telegram</span></a>
-      <a href="https://discord.gg/tu-invite" target="_blank" class="btn social"><i class="fab fa-discord"></i> <span>Discord</span></a>
-    </nav>
+    <a href="index.html" class="btn"><i class="fas fa-home"></i> <span>INICIO</span></a>
+    <a href="https://t.me/tu_canal" target="_blank" class="btn social"><i class="fab fa-telegram"></i> <span>Telegram</span></a>
+    <a href="https://discord.gg/tu-invite" target="_blank" class="btn social"><i class="fab fa-discord"></i> <span>Discord</span></a>
   </aside>
 
   <main class="main-content">
@@ -198,101 +73,64 @@
       <h1 id="gameName">Cargando...</h1>
       <img id="gameImage" class="game-img" src="" alt="Portada del juego" />
       <p id="gameSummary">Resumen del juego...</p>
-      
       <div class="categories">
         <strong>Categorías:</strong>
         <div id="gameCategories"></div>
       </div>
-
-      <div class="download-buttons" id="downloadButtons">
-        <!-- Se llenará con JS -->
-      </div>
+      <div class="download-buttons" id="downloadButtons"></div>
     </div>
   </main>
 
   <script>
-    const juegosDB = {
-      "1": {
-        nombre: "Fantasy Realm",
-        imagen: "https://via.placeholder.com/800x400/222/fff?text=Fantasy+Realm",
-        resumen: "Un RPG épico en un mundo de fantasía donde debes salvar el reino de las sombras. Explora mazmorras, derrota dragones y descubre secretos ancestrales.",
-        categorias: ["Fantasía", "RPGM", "Protagonista masculino"],
-        links: {
-          pc: "https://drive.google.com/file/d/12345/view?usp=sharing",
-          android: "https://mega.nz/file/abc123"
-        }
-      },
-      "2": {
-        nombre: "Dark School",
-        imagen: "https://via.placeholder.com/800x400/333/fff?text=Dark+School",
-        resumen: "Una historia oscura en una escuela llena de secretos y deseos prohibidos. Tus decisiones determinarán tu destino.",
-        categorias: ["Escolar", "Corrupción", "2D"],
-        links: {
-          pc: "https://drive.google.com/file/d/67890/view",
-          android: "https://mega.nz/file/def456"
-        }
-      },
-      "3": {
-        nombre: "Alien Desire",
-        imagen: "https://via.placeholder.com/800x400/444/ff66aa?text=Alien+Desire",
-        resumen: "Explora planetas exóticos y relaciones intergalácticas en esta aventura de ciencia ficción.",
-        categorias: ["Ciencia ficción", "Interracial", "Furry"],
-        links: {
-          pc: "https://drive.google.com/file/d/112233/view",
-          android: "https://mega.nz/file/ghi789"
-        }
-      }
-    };
-
     function isVIP() {
       return localStorage.getItem('gameshot_vip_activated') === 'true';
     }
 
-    function acortarLink(url) {
-      return "https://ejemplo-acortador.com/ir?url=" + encodeURIComponent(url);
-    }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const gameId = urlParams.get('id');
-    const game = juegosDB[gameId];
-
-    if (game) {
-      document.getElementById('gameName').textContent = game.nombre;
-      document.getElementById('gameTitle').textContent = game.nombre + " - Games Hot";
-      document.getElementById('gameImage').src = game.imagen;
-      document.getElementById('gameSummary').textContent = game.resumen;
-
-      const catsEl = document.getElementById('gameCategories');
-      game.categorias.forEach(cat => {
-        const tag = document.createElement('span');
-        tag.className = 'category-tag';
-        tag.textContent = cat;
-        catsEl.appendChild(tag);
-      });
-
-      const btnsEl = document.getElementById('downloadButtons');
-      let pcLink = game.links.pc;
-      let androidLink = game.links.android;
-
-      if (!isVIP()) {
-        pcLink = acortarLink(pcLink);
-        androidLink = acortarLink(androidLink);
+    async function cargarJuego() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const gameId = parseInt(urlParams.get('id'));
+      
+      try {
+        const res = await fetch('juegos.json');
+        const juegos = await res.json();
+        const game = juegos.find(j => j.id === gameId);
+        
+        if (!game) throw new Error('No encontrado');
+        
+        document.getElementById('gameName').textContent = game.nombre;
+        document.title = game.nombre + " - Games Hot";
+        document.getElementById('gameImage').src = game.portada;
+        document.getElementById('gameSummary').textContent = game.resumen;
+        
+        const cats = document.getElementById('gameCategories');
+        cats.innerHTML = game.categorias.map(cat => 
+          `<span class="category-tag">${cat}</span>`
+        ).join('');
+        
+        let pc = game.links.pc;
+        let android = game.links.android;
+        if (!isVIP()) {
+          pc = "https://ejemplo-acortador.com/ir?url=" + encodeURIComponent(pc);
+          android = "https://ejemplo-acortador.com/ir?url=" + encodeURIComponent(android);
+        }
+        
+        document.getElementById('downloadButtons').innerHTML = `
+          <a href="${pc}" target="_blank" class="btn-download btn-pc">
+            🖥️ Descargar para PC ${isVIP() ? '' : '(con acortador)'}
+          </a>
+          <a href="${android}" target="_blank" class="btn-download btn-android">
+            📱 Descargar para Android ${isVIP() ? '' : '(con acortador)'}
+          </a>
+          ${!isVIP() ? `<p style="margin-top:15px; color:#ffcc00; text-align:center; width:100%;">
+            ¿Quieres enlaces directos? <a href="vip.html" style="color:#ff3366;">Hazte VIP</a>
+          </p>` : ''}
+        `;
+      } catch (e) {
+        document.getElementById('gameDetail').innerHTML = '<h2 style="text-align:center; color:#f44336;">Juego no encontrado</h2>';
       }
-
-      btnsEl.innerHTML = `
-        <a href="${pcLink}" target="_blank" class="btn-download btn-pc">
-          🖥️ Descargar para PC ${isVIP() ? '' : '(con acortador)'}
-        </a>
-        <a href="${androidLink}" target="_blank" class="btn-download btn-android">
-          📱 Descargar para Android ${isVIP() ? '' : '(con acortador)'}
-        </a>
-        ${!isVIP() ? `<p style="margin-top:15px; color:#ffcc00; text-align:center; width:100%;">
-          ¿Quieres enlaces directos? <a href="vip.html" style="color:#ff3366; text-decoration:underline;">Hazte VIP</a>
-        </p>` : ''}
-      `;
-    } else {
-      document.getElementById('gameDetail').innerHTML = '<h2 style="text-align:center; color:#ff3366;">Juego no encontrado</h2>';
     }
+
+    cargarJuego();
   </script>
 </body>
 </html>
